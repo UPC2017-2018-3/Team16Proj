@@ -1,0 +1,38 @@
+﻿.nav {
+    height:40px;
+    background-color:white;
+    box-shadow:0 5px 5px gray;
+    margin-bottom:20px;
+    width:100%;
+}
+
+.inner-nav {
+    width:200px;
+    margin:0 auto;
+}
+
+.login-area {
+    width:500px;
+    margin:50px auto;
+}
+
+#login-title {
+    height:40px;
+    width:100%;
+    border-bottom:2px solid black;
+}
+
+#login-forms {
+    width:300px;
+    margin:20px auto;
+}
+
+.input-text {
+    width:99%;
+    height:25px;
+}
+
+.mybtn {
+    width:100%;
+    height:30px;
+}

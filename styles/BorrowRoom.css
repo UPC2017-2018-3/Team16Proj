@@ -1,0 +1,19 @@
+﻿#borrow-content {
+    width:600px;
+    margin:0 auto;
+}
+
+#select-area {
+    width:300px;
+    margin:30px auto;
+}
+
+#btnBorrow {
+    width:100%;
+    height:30px;
+}
+
+h1 {
+    height: 40px;
+    border-bottom: 2px solid black;
+}

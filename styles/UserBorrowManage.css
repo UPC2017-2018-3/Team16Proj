@@ -1,0 +1,27 @@
+﻿body {
+    background-color:#f5f5f5;
+}
+
+.info-card {
+    width: 60%;
+    min-width: 300px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14);
+    height:150px;
+    margin:10px auto;
+    background-color:white;
+    border-radius:2px;
+    padding:10px 10px 0 10px;
+}
+
+.info-card span,input {
+    margin-top:60px;
+}
+
+.right {
+    float:right;
+}
+
+.card-content {
+    height:28px;
+    margin-left:10px;
+}
