@@ -78,9 +78,10 @@ namespace MBAMeetingRoom
             AddUser();
         }
 
-        protected void BtnDeleteUser_Click(object sender, EventArgs e)
+        protected void BtnEditConfirm_Click(object sender, EventArgs e)
         {
-            Response.Write("111111111");
+            Session["EditID"] = GetEditUser.Text;
+            Response.Redirect("EditUser.aspx");
         }
     }
 }

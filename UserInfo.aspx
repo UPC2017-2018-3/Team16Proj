@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UserIndex.aspx.cs" Inherits="MBAMeetingRoom.UserIndex" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UserInfo.aspx.cs" Inherits="MBAMeetingRoom.UserInfo" %>
 
 <!DOCTYPE html>
 
@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="" />
-    <title>首页</title>
+    <title>个人信息</title>
     <link href="http://g.alicdn.com/sj/dpl/1.5.1/css/sui.min.css" rel="stylesheet" />
     <link href="http://g.alicdn.com/sj/dpl/1.5.1/css/sui-append.css" rel="stylesheet" />
     <script type="text/javascript" src="http://g.alicdn.com/sj/lib/jquery/dist/jquery.min.js"></script>
@@ -38,6 +38,37 @@
             </div>
         </div>
         <!--nav end-->
+        <div class="sui-container">
+            <h2>编辑用户</h2>
+            <div class="control-group">
+                <label for="LoginNM" class="control-label">登录名</label>
+                <div class="controls">
+                    <asp:TextBox ID="LoginNM" runat="server" ReadOnly="true" class="uneditable-input" data-rules="required"></asp:TextBox>
+                </div>
+            </div>
+            <div class="control-group">
+                <label for="RealName" class="control-label">真实姓名</label>
+                <div class="controls">
+                    <asp:TextBox ID="RealName" runat="server" data-rules="required"></asp:TextBox>
+                </div>
+            </div>
+            <div class="control-group">
+                <label for="PassWD" class="control-label">密码</label>
+                <div class="controls">
+                    <asp:TextBox ID="PassWD" runat="server" data-rules="required"></asp:TextBox>
+                </div>
+            </div>
+            <div class="control-group">
+                <label for="Phone" class="control-label">电话号码</label>
+                <div class="controls">
+                    <asp:TextBox ID="Phone" runat="server" data-rules="required"></asp:TextBox>
+                </div>
+            </div>
+            <div class="control-group">
+                <asp:Button ID="BtnEdit" runat="server" Text="保存" OnClick="BtnEdit_Click" class="sui-btn btn-large btn-primary" />&nbsp;&nbsp;
+                <asp:Button ID="BtnBack" runat="server" Text="返回" OnClick="BtnBack_Click" class="sui-btn btn-large" />
+            </div>
+        </div>
     </form>
 </body>
 </html>

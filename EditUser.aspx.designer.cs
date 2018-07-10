@@ -10,7 +10,7 @@
 namespace MBAMeetingRoom {
     
     
-    public partial class UserManagement {
+    public partial class EditUser {
         
         /// <summary>
         /// form1 控件。
@@ -22,111 +22,75 @@ namespace MBAMeetingRoom {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// inputSearch 控件。
+        /// LoginNM 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox inputSearch;
+        protected global::System.Web.UI.WebControls.TextBox LoginNM;
         
         /// <summary>
-        /// btnSearch 控件。
+        /// RealName 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSearch;
+        protected global::System.Web.UI.WebControls.TextBox RealName;
         
         /// <summary>
-        /// UserInfoList 控件。
+        /// PassWD 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DataList UserInfoList;
+        protected global::System.Web.UI.WebControls.TextBox PassWD;
         
         /// <summary>
-        /// CountLabel 控件。
+        /// UserType 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label CountLabel;
+        protected global::System.Web.UI.WebControls.DropDownList UserType;
         
         /// <summary>
-        /// inputLoginName 控件。
+        /// Phone 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox inputLoginName;
+        protected global::System.Web.UI.WebControls.TextBox Phone;
         
         /// <summary>
-        /// inputRealName 控件。
+        /// BtnEdit 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox inputRealName;
+        protected global::System.Web.UI.WebControls.Button BtnEdit;
         
         /// <summary>
-        /// inputPassword 控件。
+        /// BtnBack 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox inputPassword;
+        protected global::System.Web.UI.WebControls.Button BtnBack;
         
         /// <summary>
-        /// chooseType 控件。
+        /// BtnDeleteUser 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList chooseType;
-        
-        /// <summary>
-        /// inputPhone 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox inputPhone;
-        
-        /// <summary>
-        /// btnAddSubmit 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAddSubmit;
-        
-        /// <summary>
-        /// GetEditUser 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox GetEditUser;
-        
-        /// <summary>
-        /// BtnEditConfirm 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnEditConfirm;
+        protected global::System.Web.UI.WebControls.Button BtnDeleteUser;
     }
 }

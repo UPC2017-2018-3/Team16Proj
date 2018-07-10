@@ -131,6 +131,8 @@
     <Content Include="BorrowingManagement.aspx" />
     <Content Include="BorrowResult.aspx" />
     <Content Include="BorrowRoom.aspx" />
+    <Content Include="EditUser.aspx" />
+    <Content Include="Scripts\UserManagement.js" />
     <Content Include="SearchRoom.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -184,6 +186,7 @@
     <Content Include="styles\UserBorrowManage.css" />
     <Content Include="UserBorrowingManagement.aspx" />
     <Content Include="UserIndex.aspx" />
+    <Content Include="UserInfo.aspx" />
     <Content Include="UserManagement.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
@@ -220,6 +223,13 @@
     </Compile>
     <Compile Include="BorrowRoom.aspx.designer.cs">
       <DependentUpon>BorrowRoom.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditUser.aspx.cs">
+      <DependentUpon>EditUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditUser.aspx.designer.cs">
+      <DependentUpon>EditUser.aspx</DependentUpon>
     </Compile>
     <Compile Include="SearchRoom.aspx.cs">
       <DependentUpon>SearchRoom.aspx</DependentUpon>
@@ -280,6 +290,13 @@
     </Compile>
     <Compile Include="UserIndex.aspx.designer.cs">
       <DependentUpon>UserIndex.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserInfo.aspx.cs">
+      <DependentUpon>UserInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserInfo.aspx.designer.cs">
+      <DependentUpon>UserInfo.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserManagement.aspx.cs">
       <DependentUpon>UserManagement.aspx</DependentUpon>
