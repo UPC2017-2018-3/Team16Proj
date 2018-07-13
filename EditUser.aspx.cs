@@ -11,7 +11,7 @@ namespace MBAMeetingRoom
 {
     public partial class EditUser : System.Web.UI.Page
     {
-        private string connStr = "Data Source=47.94.107.30;Initial Catalog=MBAMeetingRoom;User ID=admin;Password=123456";
+        private string connStr = System.Configuration.ConfigurationManager.ConnectionStrings["MBAMeetingRoomConStr"].ConnectionString;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -22,6 +22,10 @@ namespace MBAMeetingRoom
             else if (Session["EditID"] == null || Session["EditID"].ToString() == "")
             {
                 Response.Redirect("UserManagement.aspx");
+            }
+            else if (Session["UserType"].ToString() != "admin")
+            {
+                Response.Redirect("Login.aspx");
             }
             LoadUserInformation();
         }
@@ -46,7 +50,7 @@ namespace MBAMeetingRoom
 
         protected void BtnBack_Click(object sender, EventArgs e)
         {
-            Session.Remove("EditUser");
+            Session.Remove("EditID");
             Response.Redirect("UserManagement.aspx");
         }
 
@@ -63,20 +67,20 @@ namespace MBAMeetingRoom
             con.Open();
             if (cmd.ExecuteNonQuery() == 1)
             {
-                Response.Write("<script>alert('添加成功')</script>");
+                Response.Write("<script>alert('修改成功')</script>");
                 con.Close();
                 Response.Redirect("UserManagement.aspx");
             }
             else
             {
-                Response.Write("<script>alert('添加失败')</script>");
+                Response.Write("<script>alert('修改失败')</script>");
                 con.Close();
             }
         }
 
         protected void BtnDeleteUser_Click(object sender, EventArgs e)
         {
-            if (LoginNM.Text != "")
+            if (LoginNM.Text != "" || LoginNM.Text != string.Empty)
             {
                 string sql = "delete from tbUser where UserLoginName = '" + LoginNM.Text + "'";
                 SqlConnection con = new SqlConnection(connStr);

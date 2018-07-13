@@ -19,7 +19,7 @@ namespace MBAMeetingRoom
             {
                 if (Session["UserType"].ToString() != "admin")
                 {
-                    Response.Redirect("UserIndex.aspx");
+                    Response.Redirect("Login.aspx");
                 }
             }
         }

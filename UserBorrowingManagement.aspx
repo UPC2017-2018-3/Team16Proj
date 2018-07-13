@@ -24,7 +24,6 @@
                 <ul class="sui-nav">
                     <li><a href="AdminIndex.aspx">主页</a></li>
                     <li><a href="SearchRoom.aspx">借用</a></li>
-                    <li><a href="#">通知</a></li>
                 </ul>
                 <ul class="sui-nav pull-right">
                     <li class="sui-dropdown">

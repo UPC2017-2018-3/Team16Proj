@@ -12,6 +12,7 @@
     <link href="http://g.alicdn.com/sj/dpl/1.5.1/css/sui.min.css" rel="stylesheet" />
     <script type="text/javascript" src="http://g.alicdn.com/sj/lib/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="http://g.alicdn.com/sj/dpl/1.5.1/js/sui.min.js"></script>
+    <script type="text/javascript" src="Scripts/RoomManagement.js"></script>
 </head>
 <body>
     <form id="form1" runat="server" class="sui-form form-horizontal sui-validate">
@@ -22,7 +23,6 @@
                     <li><a href="AdminIndex.aspx">主页</a></li>
                     <li><a href="BorrowingManagement.aspx">借用信息</a></li>
                     <li><a href="UserManagement.aspx">用户管理</a></li>
-                    <li><a href="MessageManagement.aspx">通知发布</a></li>
                     <li><a href="RoomManagement.aspx">会议室管理</a></li>
                 </ul>
                 <ul class="sui-nav pull-right">
@@ -58,7 +58,7 @@
                                 <td style="width:25%"><%#Eval("MRNote") %></td>
                                 <td style="width:10%"><%#Eval("MRStatus") %></td>
                                 <td style="width:15%">
-                                    anniu
+                                    <input type="button" class="sui-btn" runat="server" value="编辑" onclick="fillInfo(this);" data-toggle="modal" data-target="#ConfirmModal" data-keyboard="false" />
                                 </td>
                             </tr>
                         </ItemTemplate>
@@ -66,7 +66,7 @@
                 </tbody>
             </table>
         </div>
-        <%--model start--%>
+        <!--model start-->
         <div id="divAddRooms" tabindex="-1" role="dialog" data-hasfoot="false" class="sui-modal hide fade">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -122,7 +122,33 @@
                 </div>
             </div>
         </div>
-        <%--model end--%>
+        <!--model end-->
+        <!--editroom modal start-->
+        <div id="ConfirmModal" tabindex="-1" role="dialog" data-hasfoot="false" class="sui-modal hide fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" data-dismiss="modal" aria-hidden="true" class="sui-close">×</button>
+                        <h4 class="modal-title">确认</h4>
+                    </div>
+                    <div class="modal-body">
+                        确认编辑此会议室吗
+                        <asp:TextBox ID="GetEditRoom" runat="server" style="display:none;"></asp:TextBox>
+                    </div>
+                    <div class="modal-footer">
+                        <asp:Button ID="BtnEditConfirm" runat="server" Text="确认" class="sui-btn btn-primary btn-large" OnClick="BtnEditConfirm_Click" OnClientClick="removeValidate();" />
+                        <button type="button" data-dismiss="modal" class="sui-btn btn-default btn-large">取消</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--editroom modal end-->
     </form>
+    <script>
+        function fillInfo(obj) {
+            var tds = $(obj).parent().parent().find('td');
+            $("#GetEditRoom").val(tds.eq(0).text());
+        }
+    </script>
 </body>
 </html>

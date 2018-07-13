@@ -11,7 +11,7 @@ namespace MBAMeetingRoom
 {
     public partial class RoomManagement : System.Web.UI.Page
     {
-        private string connStr = "Data Source=47.94.107.30;Initial Catalog=MBAMeetingRoom;User ID=admin;Password=123456";
+        private string connStr = System.Configuration.ConfigurationManager.ConnectionStrings["MBAMeetingRoomConStr"].ConnectionString;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -75,6 +75,12 @@ namespace MBAMeetingRoom
         protected void btnAddSubmit_Click(object sender, EventArgs e)
         {
             AddRoom();
+        }
+
+        protected void BtnEditConfirm_Click(object sender, EventArgs e)
+        {
+            Session["EditRID"] = GetEditRoom.Text;
+            Response.Redirect("EditRoom.aspx");
         }
     }
 }

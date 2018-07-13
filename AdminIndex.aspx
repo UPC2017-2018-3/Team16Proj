@@ -22,14 +22,13 @@
                     <li><a href="AdminIndex.aspx">主页</a></li>
                     <li><a href="BorrowingManagement.aspx">借用信息</a></li>
                     <li><a href="UserManagement.aspx">用户管理</a></li>
-                    <li><a href="MessageManagement.aspx">通知发布</a></li>
                     <li><a href="RoomManagement.aspx">会议室管理</a></li>
                 </ul>
                 <ul class="sui-nav pull-right">
                     <li class="sui-dropdown">
                         <a href="javascript:void(0);" data-toggle="dropdown" class="dropdown-toggle">个人中心<i class="caret"></i></a>
                         <ul role="menu" class="sui-dropdown-menu">
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">个人资料</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="UserInfo.aspx">个人资料</a></li>
                             <li role="presentation">
                                 <asp:LinkButton ID="btnExit" runat="server" role="menuitem" tabindex="-1" OnClick="btnExit_Click">退出</asp:LinkButton>
                             </li>

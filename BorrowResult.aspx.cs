@@ -11,7 +11,7 @@ namespace MBAMeetingRoom
 {
     public partial class BorrowResult : System.Web.UI.Page
     {
-        string connStr = "Data Source=47.94.107.30;Initial Catalog=MBAMeetingRoom;User ID=admin;Password=123456";
+        string connStr = System.Configuration.ConfigurationManager.ConnectionStrings["MBAMeetingRoomConStr"].ConnectionString;
 
         protected void Page_Load(object sender, EventArgs e)
         {

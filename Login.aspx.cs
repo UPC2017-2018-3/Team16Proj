@@ -11,7 +11,7 @@ namespace MBAMeetingRoom
 {
     public partial class Login : System.Web.UI.Page
     {
-        private string connStr = "Data Source=47.94.107.30;Initial Catalog=MBAMeetingRoom;User ID=admin;Password=123456";
+        private string connStr = System.Configuration.ConfigurationManager.ConnectionStrings["MBAMeetingRoomConStr"].ConnectionString;
 
         protected void Page_Load(object sender, EventArgs e)
         {

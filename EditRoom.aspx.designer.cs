@@ -10,7 +10,7 @@
 namespace MBAMeetingRoom {
     
     
-    public partial class RoomManagement {
+    public partial class EditRoom {
         
         /// <summary>
         /// form1 控件。
@@ -22,93 +22,84 @@ namespace MBAMeetingRoom {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// UserInfoList 控件。
+        /// RoomID 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DataList UserInfoList;
+        protected global::System.Web.UI.WebControls.TextBox RoomID;
         
         /// <summary>
-        /// inputRoomID 控件。
+        /// RoomName 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox inputRoomID;
+        protected global::System.Web.UI.WebControls.TextBox RoomName;
         
         /// <summary>
-        /// inputRoomName 控件。
+        /// RoomLocation 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox inputRoomName;
+        protected global::System.Web.UI.WebControls.TextBox RoomLocation;
         
         /// <summary>
-        /// inputRoomLocation 控件。
+        /// RoomStatus 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox inputRoomLocation;
+        protected global::System.Web.UI.WebControls.DropDownList RoomStatus;
         
         /// <summary>
-        /// inputRoomCapacity 控件。
+        /// Capacity 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox inputRoomCapacity;
+        protected global::System.Web.UI.WebControls.TextBox Capacity;
         
         /// <summary>
-        /// statusList 控件。
+        /// Note 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList statusList;
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea Note;
         
         /// <summary>
-        /// inputRoomNote 控件。
+        /// BtnEdit 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox inputRoomNote;
+        protected global::System.Web.UI.WebControls.Button BtnEdit;
         
         /// <summary>
-        /// btnAddSubmit 控件。
+        /// BtnBack 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAddSubmit;
+        protected global::System.Web.UI.WebControls.Button BtnBack;
         
         /// <summary>
-        /// GetEditRoom 控件。
+        /// BtnDeleteRoom 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox GetEditRoom;
-        
-        /// <summary>
-        /// BtnEditConfirm 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnEditConfirm;
+        protected global::System.Web.UI.WebControls.Button BtnDeleteRoom;
     }
 }

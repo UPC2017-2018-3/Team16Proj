@@ -22,7 +22,6 @@
                     <li><a href="AdminIndex.aspx">主页</a></li>
                     <li><a href="BorrowingManagement.aspx">借用信息</a></li>
                     <li><a href="UserManagement.aspx">用户管理</a></li>
-                    <li><a href="MessageManagement.aspx">通知发布</a></li>
                     <li><a href="RoomManagement.aspx">会议室管理</a></li>
                 </ul>
                 <ul class="sui-nav pull-right">

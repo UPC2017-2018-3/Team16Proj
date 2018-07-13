@@ -18,14 +18,13 @@
 </head>
 <body>
     <form id="form1" runat="server" class="sui-form form-horizontal sui-validate">
-        <%--nav start--%>
+        <!--nav start-->
         <div class="sui-navbar">
             <div class="navbar-inner">
                 <ul class="sui-nav">
                     <li>
                         <asp:LinkButton ID="Mainpage" runat="server" OnClick="Mainpage_Click">主页</asp:LinkButton></li>
                     <li><a href="SearchRoom.aspx">借用</a></li>
-                    <li><a href="#">通知</a></li>
                 </ul>
                 <ul class="sui-nav pull-right">
                     <li class="sui-dropdown">
@@ -41,7 +40,7 @@
                 </ul>
             </div>
         </div>
-        <%--nav end--%>
+        <!--nav end-->
         <div class="sui-container">
             <div id="borrow-content">
                 <h1>选 择 借 用 节 数</h1>
