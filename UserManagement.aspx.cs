@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -12,6 +13,9 @@ namespace MBAMeetingRoom
     public partial class UserManagement : System.Web.UI.Page
     {
         private string connStr = "Data Source=47.94.107.30;Initial Catalog=MBAMeetingRoom;User ID=admin;Password=123456";
+        int PageSize = 15;
+        int CurrentPage, RecordCount, PageCount;
+        double PageCountdouble;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -26,22 +30,63 @@ namespace MBAMeetingRoom
                     Response.Redirect("UserIndex.aspx");
                 }
             }
+            if (!Page.IsPostBack)
+            {
+                CurrentPage = 0;
+                ViewState["PageIndex"] = 0;
+                RecordCount = CalculateRecord();
+                CountLabel.Text = RecordCount.ToString();
+                //计算总共有多少页
+                PageCountdouble = Math.Ceiling((double)RecordCount / (double)PageSize);
+                PageCount = (int)PageCountdouble;
+                lblPageCount.Text = PageCount.ToString();
+                ViewState["PageCount"] = PageCount;
+            }
             ListBind();
+        }
+
+        private int CalculateRecord()
+        {
+            int intCount;
+            string sql = "select count(*) as co from tbUser";
+            SqlConnection con = new SqlConnection(connStr);
+            SqlCommand MyComm = new SqlCommand(sql, con);
+            con.Open();
+            SqlDataReader dr = MyComm.ExecuteReader();
+            if (dr.Read())
+            {
+                intCount = Int32.Parse(dr["co"].ToString());
+            }
+            else
+            {
+                intCount = 0;
+            }
+            dr.Close();
+            con.Close();
+            return intCount;
+        }
+
+        ICollection CreateSource()
+        {
+            int StartIndex;
+            StartIndex = CurrentPage * PageSize;
+            string sql = "select * from tbUser";
+            SqlConnection con = new SqlConnection(connStr);
+            DataSet ds = new DataSet();
+            SqlDataAdapter MyAdapter = new SqlDataAdapter(sql, con);
+            MyAdapter.Fill(ds, StartIndex, PageSize, "QandA");
+            return ds.Tables["QandA"].DefaultView;
         }
 
         protected void ListBind()
         {
-            string queryStr = "select * from tbUser";
-            SqlConnection con = new SqlConnection(connStr);
-            SqlCommand cmd = new SqlCommand(queryStr, con);
-            con.Open();
-            SqlDataAdapter sda = new SqlDataAdapter(queryStr, con);
-            DataSet ds = new DataSet();
-            sda.Fill(ds);
-            UserInfoList.DataSource = ds;
+            UserInfoList.DataSource = CreateSource();
             UserInfoList.DataBind();
-            CountLabel.Text = "共有 " + ds.Tables[0].Rows.Count + " 条记录";
-            con.Close();
+            NextPage.Enabled = true;
+            PrevPage.Enabled = true;
+            if (CurrentPage == (PageCount - 1)) NextPage.Enabled = false;
+            if (CurrentPage == 0) PrevPage.Enabled = false;
+            lblCurrentPage.Text = (CurrentPage + 1).ToString();
         }
 
         protected void AddUser()
@@ -82,6 +127,24 @@ namespace MBAMeetingRoom
         {
             Session["EditID"] = GetEditUser.Text;
             Response.Redirect("EditUser.aspx");
+        }
+
+        protected void PrevPage_Command(object sender, CommandEventArgs e)
+        {
+            CurrentPage = (int)ViewState["PageIndex"];
+            PageCount = (int)ViewState["PageCount"];
+            if (CurrentPage > 0) CurrentPage--;
+            ViewState["PageIndex"] = CurrentPage;
+            ListBind();
+        }
+
+        protected void NextPage_Command(object sender, CommandEventArgs e)
+        {
+            CurrentPage = (int)ViewState["PageIndex"];
+            PageCount = (int)ViewState["PageCount"];
+            if (CurrentPage < (PageCount - 1)) CurrentPage++;
+            ViewState["PageIndex"] = CurrentPage;
+            ListBind();
         }
     }
 }

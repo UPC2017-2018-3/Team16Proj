@@ -28,7 +28,10 @@ namespace MBAMeetingRoom
                 Session.RemoveAll();
                 Response.Redirect("Login.aspx");
             }
-            LoadRoomInformation();
+            if (!Page.IsPostBack)
+            {
+                LoadRoomInformation();
+            }
         }
 
         protected void LoadRoomInformation()

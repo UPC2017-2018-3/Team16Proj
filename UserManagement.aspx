@@ -69,6 +69,9 @@
                 </tbody>
             </table>
             <asp:Label ID="CountLabel" runat="server"></asp:Label>
+             第<asp:Label id="lblCurrentPage" runat="server" />页/共<asp:Label id="lblPageCount" runat="server" />页&nbsp;
+            <asp:LinkButton ID="PrevPage" runat="server" class="sui-btn" CommandName="prev" OnCommand="PrevPage_Command">上一页</asp:LinkButton>
+            <asp:LinkButton ID="NextPage" runat="server" class="sui-btn" CommandName="next" OnCommand="NextPage_Command">下一页</asp:LinkButton>
         </div>
         <!--adduser modal start-->
         <div id="divAddUsers" tabindex="-1" role="dialog" data-hasfoot="false" class="sui-modal hide fade">
@@ -131,7 +134,7 @@
                     </div>
                     <div class="modal-body">
                         确认编辑此用户吗
-                        <asp:TextBox ID="GetEditUser" runat="server" style="display:none;"></asp:TextBox>
+                        <asp:TextBox ID="GetEditUser" runat="server" Style="display: none;"></asp:TextBox>
                     </div>
                     <div class="modal-footer">
                         <asp:Button ID="BtnEditConfirm" runat="server" Text="确认" class="sui-btn btn-primary btn-large" OnClick="BtnEditConfirm_Click" OnClientClick="removeValidate();" />
