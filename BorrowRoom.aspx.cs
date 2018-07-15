@@ -139,7 +139,7 @@ namespace MBAMeetingRoom
         {
             string dateStr = Session["BorrowDate"].ToString();
             string roomStr = Session["BorrowRoom"].ToString();
-            string sql = "select MRUUseTime from tbMeetingRoomUse,tbMeetingRoom where MRUUseDateS = '" + dateStr + "' and MRName = '" + roomStr + "' and AdminReviewStatus = 'ok'";
+            string sql = "select MRUUseTime from tbMeetingRoomUse where MRUUseDateS = '"+dateStr+"' and MRID = (select MRID from tbMeetingRoom where MRName = '"+roomStr+"') and AdminReviewStatus = 'ok'";
             SqlConnection con = new SqlConnection(connStr);
             SqlCommand cmd = new SqlCommand(sql, con);
             con.Open();
