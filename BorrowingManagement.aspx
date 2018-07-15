@@ -26,7 +26,7 @@
                 </ul>
                 <ul class="sui-nav pull-right">
                     <li>
-                        <asp:Button runat="server" data-toggle="modal" data-target="#divAddBorrow" data-keyboard="false" class="sui-btn btn-primary btn-lg" Text="添加借用" OnClick="Unnamed1_Click"></asp:Button>
+                        <asp:LinkButton ID="GoToLongTimeBorrowing" runat="server" Visible="false">添加长期借用</asp:LinkButton>
                     </li>
                 </ul>
             </div>
@@ -56,7 +56,8 @@
                                 <td style="width: 10%"><%#Eval("MRUUseDateS").ToString().Split(' ')[0] %></td>
                                 <td style="width: 10%"><%#Eval("MRUUseTime").ToString().TrimEnd(',') %></td>
                                 <td style="width: 25%"><%#Eval("MRUUseNote") %></td>
-                                <td style="width: 15%">anniu
+                                <td style="width: 15%">
+                                    <input type="button" class="sui-btn" runat="server" value="填写反馈" onclick="fillInfo(this);" data-toggle="modal" data-target="#ConfirmModal" data-keyboard="false" />
                                 </td>
                             </tr>
                         </ItemTemplate>
@@ -64,6 +65,33 @@
                 </tbody>
             </table>
         </div>
+        <!--edituser modal start-->
+        <div id="ConfirmModal" tabindex="-1" role="dialog" data-hasfoot="false" class="sui-modal hide fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" data-dismiss="modal" aria-hidden="true" class="sui-close">×</button>
+                        <h4 id="myModalLabel" class="modal-title">填写反馈</h4>
+                    </div>
+                    <div class="modal-body">
+                        借用编号：<asp:TextBox ID="BorrowIndex" runat="server" CssClass="uneditable-input"></asp:TextBox><br />
+                        反馈信息：
+                        <textarea runat="server" id="FeedbackText"></textarea>
+                    </div>
+                    <div class="modal-footer">
+                        <asp:Button ID="BtnEditConfirm" runat="server" Text="确认" class="sui-btn btn-primary btn-large" OnClick="BtnEditConfirm_Click" />
+                        <button type="button" data-dismiss="modal" class="sui-btn btn-default btn-large">取消</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--edituser modal end-->
+        <script>
+        function fillInfo(obj) {
+            var tds = $(obj).parent().parent().find('td');
+            $("#BorrowIndex").val(tds.eq(0).text());
+        }
+    </script>
     </form>
 </body>
 </html>

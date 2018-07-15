@@ -37,6 +37,19 @@
             </div>
         </div>
         <!--nav end-->
+        <div class="sui-container">
+            <h1>欢迎你，老师</h1>
+            <h2>今天是<%=DateTime.Now.Year %>年<%=DateTime.Now.Month %>月<%=DateTime.Now.Day %>日</h2>
+            <br />
+            <div id="pic-content">
+                <div class="pics" style="float:right">
+                    <a href="UserInfo.aspx"><img src="pics\index_myinfo.png" /></a>
+                </div>
+                <div class="pics">
+                    <a href="SearchRoom.aspx"><img src="pics\index_borrow.png" /></a>
+                </div>
+            </div>
+        </div>
     </form>
 </body>
 </html>

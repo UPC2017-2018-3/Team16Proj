@@ -19,7 +19,10 @@ namespace MBAMeetingRoom
             {
                 Response.Redirect("Login.aspx");
             }
-            LoadInformation();
+            if (!Page.IsPostBack)
+            {
+                LoadInformation();
+            }
         }
 
         protected void LoadInformation()

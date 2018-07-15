@@ -86,7 +86,7 @@ namespace MBAMeetingRoom
 
         protected void BorrowRoom()
         {
-            string sql = "insert into tbMeetingRoomUse values((select MRID from tbMeetingRoom where MRName='" + Session["BorrowRoom"] + "'),(select UserID from tbUser where UserLoginName='" + Session["LoginName"] + "'),'" + DateTime.Now.ToString() + "','" + Session["BorrowDate"] + "','" + Session["BorrowDate"] + "','" + BorrowNote.InnerText.ToString() + "',' ','" + GetSelectedBorrowTimes() + "')";
+            string sql = "insert into tbMeetingRoomUse values((select MRID from tbMeetingRoom where MRName='" + Session["BorrowRoom"] + "'),(select UserID from tbUser where UserLoginName='" + Session["LoginName"] + "'),'" + DateTime.Now.ToString() + "','" + Session["BorrowDate"] + "','" + Session["BorrowDate"] + "','" + BorrowNote.InnerText.ToString() + "','ok','" + GetSelectedBorrowTimes() + "','')";
             SqlConnection con = new SqlConnection(connStr);
             SqlCommand cmd = new SqlCommand(sql, con);
             con.Open();
@@ -139,7 +139,7 @@ namespace MBAMeetingRoom
         {
             string dateStr = Session["BorrowDate"].ToString();
             string roomStr = Session["BorrowRoom"].ToString();
-            string sql = "select MRUUseTime from tbMeetingRoomUse,tbMeetingRoom where MRUUseDateS = '" + dateStr + "' and MRName = '" + roomStr + "'";
+            string sql = "select MRUUseTime from tbMeetingRoomUse,tbMeetingRoom where MRUUseDateS = '" + dateStr + "' and MRName = '" + roomStr + "' and AdminReviewStatus = 'ok'";
             SqlConnection con = new SqlConnection(connStr);
             SqlCommand cmd = new SqlCommand(sql, con);
             con.Open();

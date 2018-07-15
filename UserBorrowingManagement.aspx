@@ -29,7 +29,7 @@
                     <li class="sui-dropdown">
                         <a href="javascript:void(0);" data-toggle="dropdown" class="dropdown-toggle">个人中心<i class="caret"></i></a>
                         <ul role="menu" class="sui-dropdown-menu">
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">个人资料</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="UserInfo.aspx">个人资料</a></li>
                             <li role="presentation"><a role="menuitem" tabindex="-1" href="UserBorrowingManagement.aspx">借用管理</a></li>
                             <li role="presentation">
                                 <asp:LinkButton ID="btnExit" runat="server" role="menuitem" TabIndex="-1" OnClick="btnExit_Click">退出</asp:LinkButton>
@@ -68,6 +68,10 @@
                             <div class="card-content">
                                 <label>借用节数：</label>
                                 <%#Eval("MRUUseTime").ToString().TrimEnd(',') %>
+                            </div>
+                            <div class="card-content">
+                                <label>管理员回复：</label>
+                                <%#Eval("AdminReviewNote").ToString() %>
                             </div>
                         </div>
                     </div>

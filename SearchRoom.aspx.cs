@@ -21,7 +21,10 @@ namespace MBAMeetingRoom
             {
                 Response.Redirect("Login.aspx");
             }
-            InitializeList();
+            if (!Page.IsPostBack)
+            {
+                InitializeList();
+            }
         }
 
         protected void btnExit_Click(object sender, EventArgs e)
@@ -81,7 +84,7 @@ namespace MBAMeetingRoom
         {
             string dateStr = DatePicker.Text.ToString();
             string roomStr = RoomList.SelectedValue.ToString();
-            string sql = "select MRUUseTime from tbMeetingRoomUse,tbMeetingRoom where MRUUseDateS = '" + dateStr + "' and MRName = '" + roomStr + "'";
+            string sql = "select MRUUseTime from tbMeetingRoomUse,tbMeetingRoom where MRUUseDateS = '" + dateStr + "' and MRName = '" + roomStr + "' and AdminReviewStatus = 'ok'";
             SqlConnection con = new SqlConnection(connStr);
             SqlCommand cmd = new SqlCommand(sql, con);
             con.Open();

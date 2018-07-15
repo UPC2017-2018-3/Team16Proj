@@ -26,12 +26,16 @@ namespace MBAMeetingRoom
                     Response.Redirect("UserIndex.aspx");
                 }
             }
-            LoadInformation();
+            if (!Page.IsPostBack)
+            {
+                LoadInformation();
+                BorrowIndex.Attributes.Add("ReadOnly", "true");
+            }
         }
 
         protected void LoadInformation()
         {
-            string sql = "select * from tbMeetingRoomUse order by MRUID desc";
+            string sql = "select top 20 * from tbMeetingRoomUse order by MRUID desc";
             SqlConnection con = new SqlConnection(connStr);
             SqlCommand cmd = new SqlCommand(sql, con);
             DataSet ds = new DataSet();
@@ -46,6 +50,23 @@ namespace MBAMeetingRoom
         protected void Unnamed1_Click(object sender, EventArgs e)
         {
             Response.Redirect("SearchRoom.aspx");
+        }
+
+        protected void BtnEditConfirm_Click(object sender, EventArgs e)
+        {
+            string sql = "update tbMeetingRoomUse set AdminReviewNote = '" + FeedbackText.InnerText + "' where MRUID = " + BorrowIndex.Text;
+            SqlConnection con = new SqlConnection(connStr);
+            SqlCommand cmd = new SqlCommand(sql, con);
+            con.Open();
+            if (cmd.ExecuteNonQuery() == 1)
+            {
+                Response.Write("<script>alert('添加成功')</script>");
+            }
+            else
+            {
+                Response.Write("<script>alert('添加失败')</script>");
+            }
+            con.Close();
         }
     }
 }

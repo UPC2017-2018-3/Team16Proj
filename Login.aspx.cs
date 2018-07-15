@@ -24,7 +24,7 @@ namespace MBAMeetingRoom
             string password = textPassword.Text.ToString();
             if (ValidateInput(username,password))
             {
-                string sql = "select UserLoginName from tbUser where UserLoginName='" + username + "' and UserPWD='" + password + "'";
+                string sql = "select UserLoginName from tbUser where UserLoginName='" + username + "' and UserPWD='" + password + "' and UserStatus = 'open'";
                 SqlConnection conn = new SqlConnection(connStr);
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 try

@@ -131,6 +131,7 @@
     <Content Include="BorrowingManagement.aspx" />
     <Content Include="BorrowResult.aspx" />
     <Content Include="BorrowRoom.aspx" />
+    <Content Include="EditBorrowInfo.aspx" />
     <Content Include="EditRoom.aspx" />
     <Content Include="EditUser.aspx" />
     <Content Include="Scripts\RoomManagement.js" />
@@ -225,6 +226,13 @@
     </Compile>
     <Compile Include="BorrowRoom.aspx.designer.cs">
       <DependentUpon>BorrowRoom.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditBorrowInfo.aspx.cs">
+      <DependentUpon>EditBorrowInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditBorrowInfo.aspx.designer.cs">
+      <DependentUpon>EditBorrowInfo.aspx</DependentUpon>
     </Compile>
     <Compile Include="EditRoom.aspx.cs">
       <DependentUpon>EditRoom.aspx</DependentUpon>
